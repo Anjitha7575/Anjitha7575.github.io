@@ -1,0 +1,45 @@
+<div class="eachDetail">
+	<div class="row">
+		<div class="col-sm-3"><img class="rImg" ng-src="{{restaurant.featured_image}}"></div>
+		<div class="col-sm-7 main">
+				<div class="name">{{restaurant.name}}</div>
+				<div>{{restaurant.location.locality}}</div>
+				<div>{{restaurant.location.address}}</div>
+		</div>
+		<div class="col-sm-2 text-right rating">
+			<button>{{restaurant.user_rating.aggregate_rating}}</button>
+			<div class="text-right">{{restaurant.user_rating.votes}}</div>
+		</div>
+	</div>
+	<hr>
+	<div class="sub-main">
+		<div><span class="col-sm-4 h">cuisines : </span><span class="col-sm-8">{{restaurant.cuisines}}</span></div>
+		<div><span class="col-sm-4 h">cost for two : </span><span class="col-sm-8">{{restaurant.average_cost_for_two}}</span></div>
+		<div><span class="col-sm-4 h">hours : </span><span class="col-sm-8">{{restaurant.cuisines}}</span></div>
+	</div>
+	<div class="f2">
+		<div class="col-sm-3" ng-click="on()"><i class="fa fa-phone" aria-hidden="true"></i><span>Call</span></div>
+		<div class="col-sm-3" ng-click="viewOne(restaurant.R.res_id)"><i class="fa fa-file-text-o" aria-hidden="true"></i><span>View Menu</span></div>
+		<div class="col-sm-3" ng-class="restaurant.has_online_delivery?'':'disable'"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i><span>Order Online</span></div>
+		<div class="col-sm-3" ng-click="viewOne(restaurant.R.res_id)"><i class="fa fa-address-book-o" aria-hidden="true"></i><span>Book a Table</span></div>
+	</div>
+</div>
+<div id="overlay" ng-if="overlay">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" ng-click="off()">&times;</button>
+          <h4 class="modal-title"><strong></strong>{{restaurant.name}}</h4>
+        </div>
+        <div class="modal-body">
+          <p>Phone.no: 9887687557</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="off()">Close</button>
+        </div>
+      </div>
+
+		<!-- <div ng-click="off()"><i class="fa fa-times" aria-hidden="true"></i></div>
+		<div></div>
+		<div>9887687557</div> -->
+</div>
