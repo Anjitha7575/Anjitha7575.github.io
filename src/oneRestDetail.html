@@ -2,9 +2,9 @@
 	<div class="row">
 		<div class="col-sm-3"><img class="rImg" ng-src="{{restaurant.featured_image}}"></div>
 		<div class="col-sm-7 main">
-				<div class="name">{{restaurant.name}}</div>
-				<div>{{restaurant.location.locality}}</div>
-				<div>{{restaurant.location.address}}</div>
+				<div class="name short">{{restaurant.name}}</div>
+				<div class="short">{{restaurant.location.locality}}</div>
+				<div class="short">{{restaurant.location.address}}</div>
 		</div>
 		<div class="col-sm-2 text-right rating">
 			<button>{{restaurant.user_rating.aggregate_rating}}</button>
@@ -12,12 +12,12 @@
 		</div>
 	</div>
 	<hr>
-	<div class="sub-main">
-		<div><span class="col-sm-4 h">cuisines : </span><span class="col-sm-8">{{restaurant.cuisines}}</span></div>
-		<div><span class="col-sm-4 h">cost for two : </span><span class="col-sm-8">{{restaurant.average_cost_for_two}}</span></div>
-		<div><span class="col-sm-4 h">hours : </span><span class="col-sm-8">{{restaurant.cuisines}}</span></div>
-	</div>
-	<div class="f2">
+	<!-- <div class="sub-main col">
+		<label class="col-sm-4 h pull-left">cuisines : </label><div class="col-sm-8 short">{{restaurant.cuisines}}</div>
+		<label class="col-sm-4 h pull-left">cost for two : </label><div class="col-sm-8 short">{{restaurant.average_cost_for_two}}</div>
+		<label class="col-sm-4 h pull-left">hours : </label><div class="col-sm-8 short">{{restaurant.cuisines}}</div>
+	</div> -->
+	<div class="f2 col-sm-12">
 		<div class="col-sm-3" ng-click="on()"><i class="fa fa-phone" aria-hidden="true"></i><span>Call</span></div>
 		<div class="col-sm-3" ng-click="viewOne(restaurant.R.res_id)"><i class="fa fa-file-text-o" aria-hidden="true"></i><span>View Menu</span></div>
 		<div class="col-sm-3" ng-class="restaurant.has_online_delivery?'':'disable'"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i><span>Order Online</span></div>
